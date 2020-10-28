@@ -1,0 +1,30 @@
+{
+  "name": "com.example.demo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack",
+    "start": "webpack serve",
+    "start-and-generate-api": "yarn generate-api && yarn start",
+    "generate-api": "swagger-codegen generate -i http://localhost:8080/v3/api-docs/ -l typescript-fetch -o src/api"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "portable-fetch": "^3.0.0",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "typescript": "^4.0.5",
+    "url": "^0.11.0"
+  },
+  "devDependencies": {
+    "@types/react": "^16.9.54",
+    "@types/react-dom": "^16.9.9",
+    "html-webpack-plugin": "^4.5.0",
+    "ts-loader": "^8.0.7",
+    "webpack": "^5.3.0",
+    "webpack-cli": "^4.1.0",
+    "webpack-dev-server": "^3.11.0"
+  }
+}
