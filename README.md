@@ -35,3 +35,13 @@ Check the Swagger documentation here http://localhost:8080/swagger-ui/index.html
 ### NodeJS
 
 TODO
+
+## Client side
+
+You can start the project using the following commands:
+
+```
+cd client
+npm run start // to use the real API, OR
+npm run start-mock // to use the mocked API
+```
