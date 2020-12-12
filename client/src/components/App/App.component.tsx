@@ -3,9 +3,9 @@ import { DefaultApi } from "../../api/api";
 import { Product } from "../../api";
 export default function App() {
   const [products, setProducts] = useState<Product[]>([]);
+  const api = new DefaultApi();
 
   useEffect(() => {
-    const api = new DefaultApi();
     api.getProducts().then((products) => setProducts(products));
   }, []);
 
