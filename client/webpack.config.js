@@ -1,8 +1,8 @@
 const path = require("path");
 const HtmlPlugin = require("html-webpack-plugin");
-// const { NormalModuleReplacementPlugin } = require("webpack");
+const { NormalModuleReplacementPlugin } = require("webpack");
 
-module.exports = (env = {}) => ({
+module.exports = () => ({
   mode: "development",
   devtool: "inline-source-map",
   entry: path.join(__dirname, "src/index.tsx"),
@@ -29,8 +29,8 @@ module.exports = (env = {}) => ({
       dateCreation: new Date(),
       baseHref: "/",
     }),
-    // env.useRealAPI
-    //   ? new NormalModuleReplacementPlugin(/campaignMockAPI\.ts/, "./api.ts")
-    //   : () => {},
+    process.env.USE_REAL_API
+      ? new NormalModuleReplacementPlugin(/apiMock\.ts/, "./index.ts")
+      : () => {},
   ],
 });
