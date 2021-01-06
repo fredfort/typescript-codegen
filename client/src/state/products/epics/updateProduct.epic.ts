@@ -13,7 +13,7 @@ export const updateProductEpic = (
   action$.pipe(
     ofType(ProductActionTypes.UPDATE_PRODUCT),
     mergeMap(({ payload: product }) =>
-      from(api.updateProduct(product.id.toString(), product)).pipe(
+      from(api.updateProduct(product.id, product)).pipe(
         map((updateProduct) => updateProductCompleted(updateProduct)),
         catchError(() => of(showProductError("Could not update the product")))
       )
